@@ -53,7 +53,7 @@ namespace WorldModel.Migrations
 
                     b.HasIndex("Countryid");
 
-                    b.ToTable("cities", (string)null);
+                    b.ToTable("cities");
                 });
 
             modelBuilder.Entity("WorldModel.Country", b =>
@@ -91,7 +91,7 @@ namespace WorldModel.Migrations
                     b.HasKey("Id")
                         .HasName("PK_country");
 
-                    b.ToTable("countries", (string)null);
+                    b.ToTable("countries");
                 });
 
             modelBuilder.Entity("WorldModel.City", b =>

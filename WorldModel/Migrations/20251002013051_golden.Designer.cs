@@ -11,7 +11,7 @@ using WorldModel;
 namespace WorldModel.Migrations
 {
     [DbContext(typeof(Comp584Context))]
-    [Migration("20250927010230_golden")]
+    [Migration("20251002013051_golden")]
     partial class golden
     {
         /// <inheritdoc />
@@ -56,7 +56,7 @@ namespace WorldModel.Migrations
 
                     b.HasIndex("Countryid");
 
-                    b.ToTable("cities", (string)null);
+                    b.ToTable("cities");
                 });
 
             modelBuilder.Entity("WorldModel.Country", b =>
@@ -94,7 +94,7 @@ namespace WorldModel.Migrations
                     b.HasKey("Id")
                         .HasName("PK_country");
 
-                    b.ToTable("countries", (string)null);
+                    b.ToTable("countries");
                 });
 
             modelBuilder.Entity("WorldModel.City", b =>
