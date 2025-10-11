@@ -49,6 +49,10 @@ namespace WorldModel.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("name");
 
+                    b.Property<long>("Population")
+                        .HasColumnType("bigint")
+                        .HasColumnName("population");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Countryid");

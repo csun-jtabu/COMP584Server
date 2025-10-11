@@ -27,7 +27,11 @@ public partial class City
     [Column("latitude")]
     public double Latitude { get; set; }
 
+    [Column("population")]
+    public long Population { get; set; }
+
     [ForeignKey("Countryid")]
     [InverseProperty("Cities")]
     public virtual Country Country { get; set; } = null!;
+
 }
