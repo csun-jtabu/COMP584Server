@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace WorldModel;
-
+// testing changes
 public partial class Comp584Context : IdentityDbContext <WorldModelUser>
 {
     public Comp584Context()
