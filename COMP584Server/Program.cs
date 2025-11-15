@@ -1,3 +1,5 @@
+using COMP584Server;
+using COMP584Server.DTOs;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -14,6 +16,8 @@ builder.Services.AddDbContext<Comp584Context>(options =>
 { 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddScoped<JwtHandler>();
 
 builder.Services.AddIdentity<WorldModelUser, IdentityRole>(options => 
 {
