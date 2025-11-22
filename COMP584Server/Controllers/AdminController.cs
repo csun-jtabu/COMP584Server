@@ -15,7 +15,7 @@ namespace COMP584Server.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginRequest loginRequest)
         {
-            WorldModelUser? worldUser = await userManager.FindByNameAsync(loginRequest.username);
+            WorldModelUser? worldUser = await userManager.FindByNameAsync(loginRequest.Username);
             //if (worldUser == null || !await userManager.CheckPasswordAsync(worldUser, loginRequest.password))
             //{
             //    Response.StatusCode = StatusCodes.Status401Unauthorized;
@@ -28,7 +28,7 @@ namespace COMP584Server.Controllers
                 return Unauthorized("Invalid username");
             }
 
-            bool loginStatus = await userManager.CheckPasswordAsync(worldUser, loginRequest.password);
+            bool loginStatus = await userManager.CheckPasswordAsync(worldUser, loginRequest.Password);
             if (!loginStatus)
             {
                 return Unauthorized("Invalid password");

@@ -2,6 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 using WorldModel;
 
 namespace COMP584Server
@@ -23,7 +24,7 @@ namespace COMP584Server
 
         private SigningCredentials GetSigningCredentials()
         {
-            byte[] key = Convert.FromBase64String(configuration["JwtSettings:SecretKey"]!);
+            byte[] key = Encoding.UTF8.GetBytes(configuration["JwtSettings:SecretKey"]!);
             SymmetricSecurityKey signingKey = new (key);
             return new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
         }
